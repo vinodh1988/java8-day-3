@@ -21,5 +21,7 @@ public class DemoShortCircuit2 {
 	   }).anyMatch(x->{
 		    return x.length()>=3;
 	   }));
+	   
+	   
     }
 }

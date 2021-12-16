@@ -1,6 +1,7 @@
 package com.circuit;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class SortCollect {
@@ -14,8 +15,15 @@ public class SortCollect {
 		stream.filter(x->{
 			System.out.println("Processing->"+x);
 			return x.length()>3;
-		}).sorted().forEach(x->{
+		}).sorted( (x,y)->{
+			            System.out.println("Sorting logic->"+x+" "+y);
+			            return -1*x.compareTo(y);
+		         }
+				
+			).forEach(x->{
 			System.out.println("Received ->"+x);
 		});
+		
+		
     }
 }
