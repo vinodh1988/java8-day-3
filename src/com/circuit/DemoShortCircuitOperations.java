@@ -7,13 +7,13 @@ import java.util.stream.Stream;
 public class DemoShortCircuitOperations {
 	public static void main(String n[]) {
 		String names[]= {"Joseph","Arjun","Manish","Jack","Laury","Harry",
-				"Rickey","Shravan","Jay","Shaun","Ram","Krishna","Nicholas"};
+				"Rickey","Shravan","Jay","Shaun","Ram","Krishna","Nicholas","Jerry"};
 		Stream<String> stream = Arrays.stream(names);
 		
 		Optional<String> result=stream.filter(x->{
 			System.out.println(x+" is processed");
-			return x.startsWith("S");
-		}).findAny();
+			return x.startsWith("J");
+		}).findFirst();
 		
 		String output= result.isPresent()?result.get():null;
 		
@@ -26,7 +26,7 @@ public class DemoShortCircuitOperations {
 		
 		result=stream.filter(x->{
 			System.out.println(x+" is processed");
-			return x.startsWith("S");
+			return x.startsWith("J");
 		}).findAny();
 		
 		output= result.isPresent()?result.get():null;
