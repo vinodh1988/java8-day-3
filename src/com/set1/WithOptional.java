@@ -13,6 +13,8 @@ public class WithOptional {
  			
  		 if(result.isPresent())
  			 System.out.println(result.get());
+ 		 else
+ 			 System.out.println(result);
  		}
 	
      }
