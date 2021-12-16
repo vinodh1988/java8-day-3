@@ -11,10 +11,17 @@ public class MapStream {
     	 Stream<Integer> two=Stream.of(12,32,64,26);
     	 Stream<Integer> three=Stream.of(31,73,24,86);
     	 Stream<Integer> four=Stream.of(81,93,44,26);
+    	 //one.forEach(System.out::println);
     	 List<Stream<Integer>> list=Arrays.asList(one,two,three,four);
     	 Stream<Stream<Integer>> stream=list.stream();
     	 System.out.println(stream.map(x->x).collect(Collectors.toList()));
-    	 stream=list.stream();
-    	 System.out.println(stream.flatMap(x->x).collect(Collectors.toList()));
+    	 //stream=list.stream();
+    	/// System.out.println(stream.flatMap(x->x).collect(Collectors.toList()));
+    	// stream=list.stream();
+    	// List<Stream> streamlist=stream.map(x->x).collect(Collectors.toList());
+    	 
+    	 for(Stream current:list) {
+    	    System.out.println(current.collect(Collectors.toList()));
+    	 }
      }
 }
